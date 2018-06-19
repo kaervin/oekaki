@@ -11,7 +11,7 @@ To make things faster in the case of recreation, the canvas content gets cached 
 
 ## How to use:
 
-go get gitlab.com/kaervin/oeakaki  
+go get gitlab.com/kaervin/oekaki  
 Then build it, and (on linux) setcap for it to use the http port with:  
 ```
 setcap CAP_NET_BIND_SERVICE=+eip dir_of_executable
