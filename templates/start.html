@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>create a Canvas</title>
+
+<style type="text/css">
+        
+body {
+        margin: auto;
+        background: #f9ebd2;
+        color: #27006f;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+}
+
+form {
+        margin: auto;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+
+}
+
+h1 {
+    font-size: 60px;
+    margin: 50px 0 0 0;
+}
+
+label {
+    margin: 20px;
+    margin-right: 5px;
+}
+
+button {
+    margin: 20px;
+}
+
+</style>
+
+</head>
+<body>
+
+<h1>お絵描き</h1>
+<h2>oekaki</h2>
+
+{{if eq 0 .}}
+    <div style="text-align: center;">All rooms are currently full ;_;<br>
+    Please F5 sometime in the near future to see if there is some space then.<br>
+    Or visit the <a href="/oekaki/public">Public Room</a>! (but expect shitty drawings)</div>
+{{else}}
+
+    <form action="/create/" method="post">
+        <label for="width">Width:</label>
+        <input type="number" min="500" max="2000" value="1000" id="width" name="width" style="width:100px;">
+        <label for="height">Height:</label>
+        <input type="number" min="500" max="2000" value="1000" id="height" name="height" style="width:100px;">
+        <label for="nlay">Layers:</label>
+        <input type="number" min="1" max="3" value="2" id="nlay" name="nlay" style="width:100px;">
+        <div class="button">
+            <button type="submit">create oekaki</button>
+        </div>
+    </form>
+
+    <div style="text-align: center;">There are still {{.}} rooms open!<br>
+    But you can also join the <a href="/oekaki/public">Public Room</a> (expect crappy drawings)</div>
+{{end}}
+
+
+<div style="margin-top: 100px;">A website where you can draw together and undo seperately</div>
+
+<div style="margin-top: 30px;">contact: <a href="mailto:kyouko@channel.moe">kyouko@channel.moe</a><br> please report bugs</div>
+
+<div style="margin-top: 30px;">Disclaimer: I'm not responsible for (most of) the drawings on this site<br>
+Also this site probably won't work well with anything that isn't a recent version of Chrome or Firefox</div>
+
+</body>
+</html>
